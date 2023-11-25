@@ -1,38 +1,50 @@
-# my-electron-app
+# My-Electron-App
 
-Welcome to my-electron-app, an Electron-based application designed for Ubuntu.
-This simple guide will help you understand how to set up, run, and build the application as an AppImage, 
-along with customizing the application name as it appears in the Ubuntu application bar.
+Welcome to `my-electron-app`, a research-focused Electron application designed to explore how to rename the application name in Ubuntu's application bar.
+
+## Getting Started
+
+### Prerequisites
+Ensure [Node.js](https://nodejs.org/) is installed on your system to proceed with the setup.
 
 ### Setup
 **Install Dependencies:**
-   ```bash
-   npm install
-   ```
+Initialize your development environment by installing necessary dependencies:
+```bash
+npm install
+```
 
 ### Running the Application
-To run the application in development mode, use:
+**Development Mode:**
+Launch the application in development mode with:
 ```bash
 npm start
 ```
+This will start the Electron app, enabling real-time observation of your modifications.
 
-## Customizing Application Name
-To change the application name that appears in the Ubuntu application bar:
+## Customizing the Application Name
 
-1. Open the `package.json` file.
-2. Modify the `name` field to your desired application name.
+**Modifying the Display Name in Ubuntu:**
+1. Access the `package.json` file in your project's root.
+2. Alter the `name` field to your chosen application name, from
    ```json
-   "name": "my-electron-app-test",
+   "name": "my-electron-app",
    ```
-3. Save your changes.
+   to:
+   ```json
+   "name": "my-electron-app-hepta-is-good",
+   ```
+3. Save these changes to apply the new application name.
 
 ## Building as an AppImage
-To build your application as an AppImage, suitable for distribution:
 
-1. Run the build script:
-   ```bash
-   npm run build
-   ```
-
-This will generate an AppImage file in the `dist` directory.
-The prefix of the name of the AppImage will be `name-version.AppImage` where the `name` and `version` are derived from the `package.json`
+**Generating a Distributable AppImage:**
+Execute the build script to create an AppImage for distribution:
+```bash
+npm run build
+```
+An AppImage will be created in the `dist` directory, following this naming format:
+```
+$name-$version.AppImage
+```
+The `$name` and `$version` values are pulled from the `package.json`.
